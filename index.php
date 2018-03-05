@@ -11,8 +11,7 @@
 <body>
 <h1>Гостевая книга</h1>
 <?php
-$path = __DIR__ . '/data.txt';
-$res = fopen($path, 'r');
+$res = fopen(__DIR__ . '/data.txt', 'r');
 $dataArray = readData($res);
 fclose($res);
 foreach ($dataArray as $recordLine) {
@@ -23,6 +22,12 @@ foreach ($dataArray as $recordLine) {
 <form action="script.php" method="post">
     <p>Добавьте новую запись в гостевую книгу: <input type="text" name="$recordLine"></p>
     <button type = "submit">Записать</button>
+</form>
+<hr>
+<h2>Фотогалерея</h2>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="myimg">
+    <button type="submit">Отправить</button>
 </form>
 </body>
 </html>

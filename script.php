@@ -1,7 +1,6 @@
 <?php
 include 'functions.php';
-$path = __DIR__ . '/data.txt';
-$res = fopen($path, 'r');
+$res = fopen(__DIR__ . '/data.txt', 'r');
 $dataArray = readData($res);
 fclose($res);
 if (isset($_POST['$recordLine'])) {
