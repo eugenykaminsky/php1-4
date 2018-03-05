@@ -6,7 +6,7 @@ fclose($res);
 if (isset($_POST['$recordLine'])) {
     $dataArray[] = $_POST['$recordLine'];
 }
-$res = fopen($path, 'r+');
+$res = fopen(__DIR__ . '/data.txt', 'r+');
 foreach ($dataArray as $recordLine) {
     fwrite($res, $recordLine);
 }
