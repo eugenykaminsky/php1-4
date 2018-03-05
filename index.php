@@ -1,3 +1,4 @@
+<?php include 'functions.php' ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,8 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+<h1>Гостевая книга</h1>
 <?php
-
+$path = __DIR__ . '/data.txt';
+$res = fopen($path, 'r');
+$dataArray = readData($res);
+fclose($res);
+foreach ($dataArray as $recordLine) {
+    echo $recordLine."<br>";
+}
 ?>
+<hr>
+<form action="script.php" method="post">
+    <p>Добавьте новую запись в гостевую книгу: <input type="text" name="$recordLine"></p>
+    <button type = "submit">Записать</button>
+</form>
 </body>
 </html>
