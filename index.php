@@ -31,9 +31,9 @@ foreach ($dataArray as $recordLine) {
 <hr>
 <h2>Фотогалерея</h2>
 <?php
-$x = scandir(__DIR__ . '/images');
+$filesArray = scandir(__DIR__ . '/images');
 $skip = ['.', '..'];
-foreach ($x as $img) {
+foreach ($filesArray as $img) {
     if(!in_array($img, $skip)) {
          ?><img src="images/<?php echo $img;?>">
     <?php }

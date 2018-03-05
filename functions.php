@@ -1,8 +1,8 @@
 <?php
-function readData($data)
+function readData($path)
 {
-while(!feof($data)){
-    $line[] = fgets($data,1024);
+while(!feof($path)){
+    $bookArray[] = fgets($path,1024);
 }
-    return $line;
+    return $bookArray;
 }
